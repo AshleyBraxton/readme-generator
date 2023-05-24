@@ -5,7 +5,7 @@ function renderLicenseBadge(license) {
   if(!license){
     return "";
   }else {
-   return '(https://img.shields.io/badge/License-'+ license +'-lightgrey.svg)';
+   return 'https://img.shields.io/badge/License-'+ license +'-lightgrey.svg';
   }
 }
 
@@ -14,7 +14,7 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   if (!license){
     return "";
-  }else{
+  }else {
     return '[(https://img.shields.io/badge/License-'+ license +'-lightgrey.svg)](https://opensource.org/licenses/'+ license + ' )'
   }
 }
@@ -33,14 +33,20 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `# ${data.title}
   ## Badges
-  ${renderLicenseBadge(data.license)}
+  <img src="${renderLicenseBadge(data.license)}">
+  
 
   ## Table of Contents
   *[Description](#description)
+
   *[Installation](#installation)
+
   *[Useage](#usage)
+
   *[How to Contribute](#how-to-contribute)
+
   *[Tests](#tests)
+
   *[License](license)
 
   ## Description
@@ -60,7 +66,15 @@ function generateMarkdown(data) {
 
   ## License
   ${renderLicenseSection(data.license)}
-  ${renderLicenseLink(data.licnese)}
+
+  "https://opensource.org/licenses/${data.license}"
+
+  ## Questions
+  For any Questions reguarding this project feel free to contact me or take a look at some of my other work.
+
+  ${data.email}
+
+  https://github.com/${data.github}
 `;
 }
 
