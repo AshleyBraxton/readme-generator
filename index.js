@@ -33,7 +33,7 @@ var fs = require('fs');
     {
         type: 'input',
         name: 'test',
-        message: 'How would someone test this porject?',
+        message: 'How would someone test this project?',
     },
     {
         type: 'list',
